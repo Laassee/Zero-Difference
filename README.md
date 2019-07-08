@@ -1,5 +1,7 @@
 # Zero-Difference
 
+Drag n' drop: https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-enabling-drag-and-drop-on-a-user-control
+
 This is a mathematics game which uses the numbers 0-9.
 These numbers are used to create two mathematics expressions and extracting the second result from the first result.
 The goal of this game is to reduce the difference between result 1 and result 2 to zero.
