@@ -8,21 +8,14 @@
         Title="MainWindow" Height="600" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column ="0" 
-                    Background="Beige">
-            <TextBox Width="Auto" Margin="2" 
-                       Text="green"/>
-            <local:DragButton Margin="2" />
-            <local:DragButton Margin="2" />
-        </StackPanel>
-        <StackPanel Grid.Column="1"
-                    Background="Bisque">
+        <StackPanel Grid.Column ="0" Orientation="Vertical" VerticalAlignment="Center">
+            <TextBlock Width="Auto" Margin="2" />
         </StackPanel>
     </Grid>
 
-
+    
 
 </Window>
