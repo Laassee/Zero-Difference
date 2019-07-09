@@ -20,6 +20,7 @@ namespace Zero_Difference
     /// </summary>
     public partial class DragButton : UserControl
     {
+        private Brush _previousFill = null;
         public DragButton()
         {
             InitializeComponent();
@@ -123,6 +124,32 @@ namespace Zero_Difference
                 }
             }
             e.Handled = true;
+        }
+        protected override void OnDragEnter(DragEventArgs e)
+        {
+            base.OnDragEnter(e);
+            // Save the current Fill brush so that you can revert back to this value in DragLeave
+            _previousFill = dragButtonUI.Fill;
+
+            // If the DataObject contains string data, extract it
+            if (e.Data.GetDataPresent(DataFormats.StringFormat))
+            {
+                string dataString = (string)e.Data.GetData(DataFormats.StringFormat);
+
+                // If the string can be converted into a Brush, convert it
+                BrushConverter converter = new BrushConverter();
+                if (converter.IsValid(dataString))
+                {
+                    Brush newFill = (Brush)converter.ConvertFromString(dataString.ToString());
+                    dragButtonUI.Fill = newFill;
+                }
+            }
+        }
+        protected override void OnDragLeave(DragEventArgs e)
+        {
+            base.OnDragLeave(e);
+            // Undo the preview that was applied in OnDragEnter
+            dragButtonUI.Fill = _previousFill;
         }
     }
 }
