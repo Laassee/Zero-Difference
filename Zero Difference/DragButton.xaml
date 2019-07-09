@@ -5,7 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Zero_Difference"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             AllowDrop="True">
+    <!--AllowDrop = True (and processing of data) enables the element to be a drop target-->
     <Grid>
         <Rectangle x:Name="dragButtonUI"
                        Height="100" Width="50"
