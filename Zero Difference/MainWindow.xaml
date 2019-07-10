@@ -5,24 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zero_Difference"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000">
+        Title="MainWindow" Height="600" Width="1000"
+        AllowDrop="True">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column ="0" 
-                    Background="Beige">
-            <TextBox Width="Auto" Margin="2" 
-                       Text="green"/>
+        <StackPanel Grid.Column="0"
+            Background="Beige"
+            AllowDrop="True"
+            DragOver="panel_DragOver"
+            Drop="panel_Drop">
+            <TextBox Width="Auto" Margin="2"
+             Text="green"/>
             <local:DragButton Margin="2" />
             <local:DragButton Margin="2" />
         </StackPanel>
         <StackPanel Grid.Column="1"
-                    Background="Bisque"
-                    AllowDrop="True"
-                    DragOver="panel_DragOver"
-                    Drop="panel_DragOver">
+            Background="Bisque"
+            AllowDrop="True"
+            DragOver="panel_DragOver"
+            Drop="panel_Drop">
         </StackPanel>
     </Grid>
 

@@ -24,7 +24,6 @@ namespace Zero_Difference
         {
             InitializeComponent();
         }
-
         private void panel_DragOver(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent("Object"))
@@ -41,7 +40,6 @@ namespace Zero_Difference
                 }
             }
         }
-
         private void panel_Drop(object sender, DragEventArgs e)
         {
             // If an element in the panel has already handled the drop,
@@ -63,6 +61,8 @@ namespace Zero_Difference
                         if (e.KeyStates == DragDropKeyStates.ControlKey &&
                             e.AllowedEffects.HasFlag(DragDropEffects.Copy))
                         {
+                            //Circle _circle = new Circle((Circle)_element);
+                            //_panel.Children.Add(_circle);
                             DragButton _dragButton = new DragButton((DragButton)_element);
                             _panel.Children.Add(_dragButton);
                             // set the value to return to the DoDragDrop call
